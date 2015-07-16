@@ -25,4 +25,57 @@ angular.module('starter.controllers', [])
   $scope.settings = {
     enableFriends: true
   };
+})
+.controller('GeoCtrl', function($cordovaGeolocation) {
+
+  var posOptions = {timeout: 10000, enableHighAccuracy: true};
+  $cordovaGeolocation
+      .getCurrentPosition(posOptions)
+      .then(function (position) {
+        var lat  = position.coords.latitude
+        var long = position.coords.longitude
+
+
+        var map = new AMap.Map('mapContainer', {
+          resizeEnable: true,
+          //rotateEnable: true,
+          dragEnable: true,
+          zoomEnable: true,
+          //设置可缩放的级别
+          zooms: [18],
+          //传入2D视图，设置中心点和缩放级别
+          view: new AMap.View2D({
+            center: new AMap.LngLat(position.coords.longitude, position.coords.latitude),
+            zoom: 18
+          })
+        });
+
+        console.log(position)
+      }, function(err) {
+        // error
+      });
+
+
+  var watchOptions = {
+    frequency : 1000,
+    timeout : 3000,
+    enableHighAccuracy: false // may cause errors if true
+  };
+
+  var watch = $cordovaGeolocation.watchPosition(watchOptions);
+  watch.then(
+      null,
+      function(err) {
+        // error
+      },
+      function(position) {
+        var lat  = position.coords.latitude
+        var long = position.coords.longitude
+
+
+        console.log(position)
+      });
+
+
+  watch.clearWatch();
 });
