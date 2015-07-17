@@ -1,0 +1,19 @@
+{
+  "name": "weiji_server",
+  "version": "1.0.0",
+  "description": "weiji api ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jason You",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^0.8.3",
+    "hiredis": "^0.4.0",
+    "mongoose": "^4.0.7",
+    "morgan": "^1.6.1",
+    "redis": "^0.12.1",
+    "restify": "^3.0.3"
+  }
+}
