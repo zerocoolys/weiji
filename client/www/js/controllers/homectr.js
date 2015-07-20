@@ -1,4 +1,4 @@
-var module = angular.module('weiji.controllers', [])
+var module = angular.module('home.controllers', [])
     .controller('HomeCtrl', function ($scope, $rootScope, $ionicModal, $ionicActionSheet) {
 
         $scope.data = {}

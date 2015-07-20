@@ -1,0 +1,37 @@
+<ion-modal-view view-title="注册" name="register-view">
+
+    <ion-header-bar class="bar-positive fix-buttons">
+        <h1 class="title">注册</h1>
+    </ion-header-bar>
+    <ion-content class="padding">
+        <div class="list list-inset">
+            <label class="item item-input">
+                <input type="text" placeholder="用户名" ng-model="data.username">
+            </label>
+            <label class="item item-input">
+                <input type="password" placeholder="密码" ng-model="data.password">
+            </label>
+            <label class="item item-input">
+                <input type="password" placeholder="再输入一次密码" ng-model="data.repassword">
+            </label>
+        </div>
+        <button class="button button-block button-calm" ng-click="regist()">注册</button>
+        <button class="button button-block button-stable" ng-click="hideRegister()">取消</button>
+        <a ng-click="showRegister()">登录</a>
+
+        <a ng-click="findPassword()">找回密码</a>
+
+    </ion-content>
+</ion-modal-view>
+
+<div class="list">
+    <label class="item item-input">
+        <input type="text" placeholder="First Name">
+    </label>
+    <label class="item item-input">
+        <input type="text" placeholder="Last Name">
+    </label>
+    <label class="item item-input">
+        <textarea placeholder="Comments"></textarea>
+    </label>
+</div>

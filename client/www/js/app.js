@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'camera.controllers', 'starter.services', 'ngCordova'])
+angular.module('weiji', ['ionic', 'home.controllers', 'ngCordova'])
 
     .run(function ($ionicPlatform) {
         $ionicPlatform.ready(function () {
@@ -27,81 +27,85 @@ angular.module('starter', ['ionic', 'starter.controllers', 'camera.controllers',
 
     .config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
-        console.log($ionicConfigProvider)
         $ionicConfigProvider.platform.android.tabs.position("bottom");
 
-        // Ionic uses AngularUI Router which uses the concept of states
-        // Learn more here: https://github.com/angular-ui/ui-router
-        // Set up the various states which the app can be in.
-        // Each state's controller can be found in controllers.js
         $stateProvider
-            .state('home',{
-                url:'/home',
-                views:{
-                    'home':{
-                        templateUrl:'index.html',
+            .state('index', {
+                url: '/index',
+                abstract: true,
+                templateUrl: 'pages/tabs.html'
+
+            })
+
+            //用户主页
+            .state('index.home', {
+                url: '/home',
+                views: {
+                    'home-tab': {
+                        templateUrl: 'pages/home.html',
                         controller: 'HomeCtrl'
                     }
                 }
             })
-
-            // setup an abstract state for the tabs directive
-            .state('tab', {
-                url: '/tab',
-                abstract: true,
-                templateUrl: 'templates/tabs.html'
-            })
-
-            // Each tab has its own nav history stack:
-
-            .state('tab.dash', {
-                url: '/dash',
+            //用户搜索页
+            .state('search', {
+                url: '/search',
                 views: {
-                    'tab-dash': {
-                        templateUrl: 'templates/tab-dash.html',
-                        controller: 'DashCtrl'
+                    'search': {
+                        templateUrl: '/pages/search.html',
+                        controller: 'SearchCtrl'
                     }
                 }
             })
-
-            .state('tab.chats', {
-                url: '/chats',
+            //用户登录页
+            .state('login', {
+                url: '/login',
                 views: {
-                    'tab-chats': {
-                        templateUrl: 'templates/tab-chats.html',
-                        controller: 'ChatsCtrl'
+                    'login': {
+                        templateUrl: '/pages/login.html',
+                        controller: 'LoginCtrl'
+                    }
+                }
+            }).state('register', {
+                url: '/register',
+                views: {
+                    'register': {
+                        templateUrl: '/pages/register.html',
+                        controller: 'RegisterCtrl'
                     }
                 }
             })
-            .state('tab.chat-detail', {
-                url: '/chats/:chatId',
+            .state('index.interesting', {
+                url: '/interesting',
                 views: {
-                    'tab-chats': {
-                        templateUrl: 'templates/chat-detail.html',
-                        controller: 'ChatDetailCtrl'
-                    }
-                }
-            })
-            .state('tab.map', {
-                url: '/map',
-                views: {
-                    'tab-map': {
-                        templateUrl: 'templates/tab-map.html',
-                        controller: 'GeoCtrl'
-                    }
-                }
-            })
-            .state('tab.account', {
-                url: '/account',
-                views: {
-                    'tab-account': {
-                        templateUrl: 'templates/tab-account.html',
-                        controller: 'GeoCtrl'
+                    'register': {
+                        templateUrl: 'pages/interesting.html',
+                        controller: 'InterestCtrl'
                     }
                 }
             });
 
-        // if none of the above states are matched, use this as the fallback
-        $urlRouterProvider.otherwise('/tab/dash');
+// setup an abstract state for the tabs directive
 
-    });
+// if none of the above states are matched, use this as the fallback
+        $urlRouterProvider.otherwise('/index/home');
+
+    })
+;
+
+var test = angular.module('test', []).controller('hello', function () {
+
+});
+var test2 = angular.module('test', []).controller('hello1', function () {
+
+});
+
+var test3 = angular.module('duplication', ['test']).controller('show', function ($test) {
+    console.log($test)
+});
+//console.log(test)
+//console.log(test2)
+//console.log(test == test2)
+//
+//console.log(test3)
+
