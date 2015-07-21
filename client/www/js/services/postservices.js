@@ -2,17 +2,16 @@
  * Created by yousheng on 15/7/20.
  */
 
-angular.service('postservices', [$rootScope])
-    .factory('Posts', function ($rootScope) {
-        var Posts = {
+ServicesModule.factory('PostServices', function ($http) {
 
-            latest: function () {
+    return {
+        lastest: function ($scope) {
+            $http.get('http://test.com/v1/users/' + id + '/posts').then(function (data) {
+                console.log(data);
 
-                $rootScope.$broadcast('lastest')
-
-            }
+                $scope.posts = data;
+            })
         }
+    };
 
-        return Posts;
-
-    })
+})

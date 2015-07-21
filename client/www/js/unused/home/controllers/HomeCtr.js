@@ -1,8 +1,7 @@
 //angular.module('weiji.controllers', []).controller('HomeCtrl', ['LoginModal', function ($scope, $rootScope, $ionicModal, $ionicActionSheet, LoginModal) {
-ControllersModule.controller('HomeCtrl', function ($scope, $rootScope, $ionicModal, RegisterModalService, LoginModalService, AvatarDropdownService) {
+app.controller('HomeCtrl', function ($scope, $rootScope, $ionicModal, LoginModalService, AvatarDropdownService) {
 
     LoginModalService.create($scope);
-    RegisterModalService.create($scope);
     AvatarDropdownService.create($scope);
 
 
@@ -15,13 +14,6 @@ ControllersModule.controller('HomeCtrl', function ($scope, $rootScope, $ionicMod
         LoginModalService.hideLogin($scope);
     }
 
-    $scope.showRegister = function () {
-        RegisterModalService.showRegister($scope);
-    }
-
-    $scope.hideRegister = function () {
-        RegisterModalService.hideRegister($scope);
-    }
     // latest updates
 })
     .controller('LoginCtrl', function ($scope) {

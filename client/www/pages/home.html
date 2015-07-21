@@ -1,7 +1,7 @@
 <ion-view view-title="热门">
 
     <ion-content>
-
+        <button ng-click="showLogin()">login</button>
         <ion-list>
             <ion-item class="item">
                 <div class="list card">
@@ -23,7 +23,7 @@
                                 <p>November 05, 1955</p>
                             </div>
                             <div class="col">
-                                <a ng-click="showAction()"
+                                <a ng-click="showActionSheet(1)"
                                    class="button button-small button-icon icon ion-arrow-down-b"></a>
                             </div>
                         </div>
@@ -61,7 +61,7 @@
                             <i class="icon ion-chatbox"></i>
                         </a>
                         <a class="tab-item" href="#">
-                            <i class="icon ion-share"></i>
+                            <i class="icon ion-plus-round"></i>
 
                         </a>
                     </div>

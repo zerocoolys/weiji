@@ -1,0 +1,1 @@
+var ServicesModule = angular.module('ServicesModule', [])

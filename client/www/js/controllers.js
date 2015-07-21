@@ -1,73 +1,69 @@
-var module = angular.module('weiji.controllers', [])
-    .controller('HomeCtrl', function ($scope, $rootScope, $ionicModal, $ionicActionSheet) {
+//angular.module('weiji.controllers', []).controller('HomeCtrl', ['LoginModal', function ($scope, $rootScope, $ionicModal, $ionicActionSheet, LoginModal) {
+app.controller('HomeCtrl', function ($scope, $rootScope, $ionicModal, $ionicActionSheet, Chats, LoginModalService) {
 
-        $scope.data = {}
+    $scope.data = {}
 
+    console.log($rootScope)
+    $ionicModal.fromTemplateUrl('pages/login.html', {
+        animation: 'slide-in-up'
+    }).then(function (modal) {
+        $scope.loginModal = modal;
+    });
 
-        console.log('Test');
-
-        console.log($rootScope)
-        $ionicModal.fromTemplateUrl('pages/login.html', {
-            scope: $scope,
-            animation: 'slide-in-up'
-        }).then(function (modal) {
-            $scope.loginModal = modal;
-        });
-
-        $ionicModal.fromTemplateUrl('pages/register.html', {
-            scope: $scope,
-            animation: 'slide-in-up'
-        }).then(function (modal) {
-            $scope.registerModal = modal;
-        });
+    $ionicModal.fromTemplateUrl('pages/register.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function (modal) {
+        $scope.registerModal = modal;
+    });
 
 
-        $scope.showLogin = function () {
-            $scope.loginModal.show();
-        }
-        $scope.hideLogin = function () {
-            console.log('hide');
-            $scope.loginModal.hide();
-        }
+    $scope.showLogin = function () {
+        $scope.loginModal.show();
+    }
+    $scope.hideLogin = function () {
+        console.log('hide');
+        $scope.loginModal.hide();
+    }
 
-        $scope.showRegister = function () {
-            $scope.loginModal.hide();
+    $scope.showRegister = function () {
+        $scope.loginModal.hide();
 
-            $scope.registerModal.show();
-        }
-        $scope.hideRegister = function () {
-            $scope.registerModal.hide();
-        }
-
-
-        $scope.showLocation = function () {
-            console.log('!!')
-        }
+        $scope.registerModal.show();
+    }
+    $scope.hideRegister = function () {
+        $scope.registerModal.hide();
+    }
 
 
-        $scope.showAction = function () {
-            $ionicActionSheet.show({
-                buttons: [
-                    {
-                        text: '关注',
-                        onclick: function () {
-                            console.log('关注')
-                        }
-                    },
-                    {
-                        text: '屏蔽此人'
+    $scope.showLocation = function () {
+        console.log('!!')
+    }
+
+
+    $scope.showAction = function () {
+        $ionicActionSheet.show({
+            buttons: [
+                {
+                    text: '关注',
+                    onclick: function () {
+                        console.log('关注')
                     }
-                ],
-                cancelText: '退出',
-                buttonClicked: function (index) {
-                    console.log(this)
-                    this.buttons[index].onclick();
-                    return true;
+                },
+                {
+                    text: '屏蔽此人'
                 }
-            })
-        }
-        // latest updates
-    })
+            ],
+            cancelText: '退出',
+            buttonClicked: function (index) {
+                console.log(this)
+                this.buttons[index].onclick();
+                return true;
+            }
+        })
+    }
+    // latest updates
+})
     .controller('LoginCtrl', function ($scope) {
 
         $scope.data = {}
