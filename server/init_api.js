@@ -1,4 +1,4 @@
-var user = require('./js/auth/user.js')
+var user = require('./api/user.js')
 
 
 module.exports = function (server, db) {

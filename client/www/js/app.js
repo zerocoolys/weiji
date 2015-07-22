@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-var app = angular.module('weiji', ['ionic', 'ControllersModule', 'ServicesModule', 'ngCordova'])
+var app = angular.module('weiji', ['ionic', 'ControllersModule', 'ServicesModule', 'ConfigModule', 'ngCordova'])
 
         .run(function ($ionicPlatform) {
             $ionicPlatform.ready(function () {
@@ -84,6 +84,16 @@ var app = angular.module('weiji', ['ionic', 'ControllersModule', 'ServicesModule
                             controller: 'InterestCtrl'
                         }
                     }
+                })
+                .state('person', {
+                    url: "/person/:id",
+                    templateUrl: 'pages/person.html',
+                    controller: 'UserCtrl'
+                })
+                .state('person.favorite', {
+                    url: "/person/:id/favorite",
+                    templateUrl: 'pages/favorite.html',
+                    controller: 'FavoriteCtrl'
                 });
 
 // setup an abstract state for the tabs directive

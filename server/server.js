@@ -19,7 +19,5 @@ server.listen(process.env.PORT || 9804, function () {
 
     var init = require('./init_api.js')(server, db);
 
-
-
     console.log("Server started @ ", process.env.PORT || 9804);
 });

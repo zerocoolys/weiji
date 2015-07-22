@@ -1,0 +1,68 @@
+/* Empty. Add your own CSS if you like */
+
+.person_header {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.person_header .background {
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    background: no-repeat bottom center;
+    z-index: 1;
+}
+
+.person_header .shadow {
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.person_header .photo_wrap {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.person_header .person_photo {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 48px auto 0;
+    padding: 4px;
+    background: #fff;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+}
+
+.person_header .photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.person_header .person_name {
+    margin-top: 6px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+    vertical-align: text-bottom;
+}
+
+.person_header .username {
+    font-size: 22px;
+    display: inline;
+}
+
+.person_header .person_intro {
+    margin-top: 4px;
+    text-align: center;
+    color: #fff;
+    line-height: 18px;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}

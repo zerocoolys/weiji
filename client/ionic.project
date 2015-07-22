@@ -1,4 +1,10 @@
 {
   "name": "weiji",
-  "app_id": ""
+  "app_id": "a5b56336",
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "http://localhost:9804"
+    }
+  ]
 }
