@@ -1,0 +1,184 @@
+/*边距调整*/
+.home_item .item {
+    padding: 0px;
+    border-width: 0px;
+}
+
+.home_item .item-avatar > img:first-child {
+    top: 0px;
+}
+
+.home_item .row {
+    padding: 0px;
+}
+
+.home_item .item-avatar {
+    padding-left: 72px;
+    min-height: 52px;
+    margin: 10px 0;
+}
+
+.home_item .item h2 {
+    font-weight: bold;
+    color: #0a9ec7;
+}
+
+.home_item .item p {
+    color: #3b94ad;
+}
+
+.home_item .item-body p {
+    color: #666;
+    padding: 0 10px;
+}
+
+/*��¼*/
+.button.button-positive.button-clear {
+    font-size: 12px;
+    color: #fff;
+}
+
+.home_item .button.button-stable {
+
+}
+
+.home_item .col, .home_item .col .ion-ios-gear-outline {
+    padding: 0px;
+}
+
+.icon .subdued {
+    font-size: 14px;
+}
+
+.home_location {
+    float: right;
+    margin-top: 10px;
+    color: #999;
+}
+
+.home_label {
+    color: #33cd5f;
+    padding: 0 10px;
+    line-height: 20px;
+
+}
+
+/*选项卡*/
+.table_list.tab-item {
+    width: 100%;
+}
+
+.slider {
+    height: 100%
+}
+
+.slidingTabs {
+    height: 48px;
+    z-index: 10
+}
+
+.slidingTabs .scroll {
+    height: auto;
+    min-width: 100%
+}
+
+.slidingTabs ul {
+    height: 48px;
+    border-bottom: 1px solid #bcbcbc;
+}
+
+.slidingTabs ul li {
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    display: block;
+    float: left;
+    width: 50%;
+    margin: 0;
+    text-align: center;
+    font-size: 14px;
+    position: relative;
+    overflow: hidden
+}
+
+.slidingTabs ul li.tab-active {
+    color: #11c1f3;
+    border-bottom: 2px solid #11c1f3;
+}
+
+.slidingTabs ul li .ink {
+    display: block;
+    position: absolute;
+    background: rgba(56, 147, 245, .8);
+    border-radius: 100%;
+    transform: scale(0)
+}
+
+.slidingTabs .tab-indicator-wrapper .tab-indicator {
+    height: 100%;
+    background-color: #fff;
+    width: 70px;
+    position: relative
+}
+
+/*关注列表*/
+.care_list .item-avatar {
+    font-size: 12px;
+    color: #5d5d5d;
+}
+
+.care_list .care_name {
+    text-decoration: none;
+    color: #0a9ec7;
+    font-size: 12px;
+}
+
+.care_list .care_time {
+    color: #989898;
+}
+
+.care_list ul li {
+    display: block;
+    float: left;
+    width: 40px;
+    height: 40px;
+    margin: 5px 5px 5px 0;
+
+}
+
+.care_list ul li img {
+    max-width: 100%;
+}
+
+.care_item .item, .care_list .item {
+    word-wrap: break-word;
+    white-space: inherit;
+}
+
+.care_img {
+    position: absolute
+}
+
+.care_text {
+    float: left;
+    width: 95%;
+    min-height: 45px;
+    border-bottom: 1px solid #e1e0e0;
+    padding-right: 45px;
+    word-wrap: break-word;
+
+}
+
+.care_button {
+    position: absolute;
+    right: 10px;
+    height: 24px;
+    min-height: 24px;
+    min-width: 30px;
+    padding: 0px;
+    text-align: center;
+    line-height: 24px;
+    font-size: 10px;
+    white-space: nowrap;
+
+}

@@ -1,0 +1,37 @@
+<ion-view title="关注">
+    <ion-content class="home_item">
+        <ion-slide-box slide-tabs-scrollable="true" show-pager="false" ion-slide-tabs>
+            <ion-slide ion-slide-tab-label="正在关注">
+                <ion-item class="item">
+                    <div class="list care_list">
+                        <div ng-repeat="item in items" class="item item-avatar">
+                            <img ng-src="{{ item.image }}">
+                            <a href="#" class="care_name">{{ item.name}}</a>&nbsp;赞了{{item.number}}张照片。&nbsp;<span
+                                class="care_time">{{item.time}}</span>
+                            <ul>
+                                <li ng-repeat="lickimg in lickimgs"><a href=""><img ng-src="{{ lickimg.show}}"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    </div>
+                </ion-item>
+            </ion-slide>
+            <ion-slide ion-slide-tab-label="谁在乎我" class="care_item">
+                <ion-item class=" item">
+                    <div class="list care_list">
+                        <div ng-repeat="item in items" class="item item-avatar ">
+                            <img class="care_img" ng-src="{{ item.image }}">
+
+                            <div class="care_text">
+                                <a href="#" class="care_name">{{ item.name}}</a>&nbsp;开始关注你了哦。&nbsp;<span
+                                    class="care_time">{{item.time}}</span>
+                            </div>
+                            <button class="button care_button button-outline  button-balanced">+关注</button>
+                        </div>
+                    </div>
+                    </div>
+                </ion-item>
+            </ion-slide>
+        </ion-slide-box>
+    </ion-content>
+</ion-view>
