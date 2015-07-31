@@ -49,10 +49,10 @@ var app = angular.module('weiji', ['ionic', 'ControllersModule', 'ServicesModule
                     }
                 })
                 //用户搜索页
-                .state('search', {
+                .state('index.search', {
                     url: '/search',
                     views: {
-                        'search': {
+                        'search-tab': {
                             templateUrl: '/pages/search.html',
                             controller: 'SearchCtrl'
                         }
@@ -76,19 +76,26 @@ var app = angular.module('weiji', ['ionic', 'ControllersModule', 'ServicesModule
                         }
                     }
                 })
+               //关注页
                 .state('index.interesting', {
                     url: '/interesting',
                     views: {
-                        'register': {
+                        'int-tab': {
                             templateUrl: 'pages/interesting.html',
                             controller: 'InterestCtrl'
                         }
                     }
                 })
-                .state('person', {
+                //个人中心
+                .state('index.person', {
                     url: "/person/:id",
-                    templateUrl: 'pages/person.html',
-                    controller: 'UserCtrl'
+                    views: {
+                        'account-tab': {
+                            templateUrl: 'pages/person.html',
+                            controller: 'UserCtrl'
+                        }
+                    }
+
                 })
                 .state('person.favorite', {
                     url: "/person/:id/favorite",

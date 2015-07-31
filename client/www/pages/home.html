@@ -1,20 +1,17 @@
-<ion-view view-title="热门">
-
-    <ion-content>
-        <button ng-click="showLogin()">login</button>
+<ion-view title="热门">
+    <ion-nav-buttons side="right">
+        <a class="button" ng-click="showLogin()">登录</a>
+    </ion-nav-buttons>
+    <ion-content class="home_item">
         <ion-list>
             <ion-item class="item">
-                <div class="list card">
-
+                <div class="list">
                     <div class="item item-avatar">
                         <img src="posts/avatars/avatar1.jpg" ng-click="person(1)">
-
-
                         <!--<h2>Marty McFly</h2>-->
 
                         <!--<p>November 05, 1955</p>-->
                         <!--<a class="button button-icon icon ion-arrow-down-b" style="padding: 0px;"></a>-->
-
 
                         <div class="row">
                             <div class="col-90">
@@ -23,8 +20,9 @@
                                 <p>November 05, 1955</p>
                             </div>
                             <div class="col">
-                                <a ng-click="showActionSheet(1)"
-                                   class="button button-small button-icon icon ion-arrow-down-b"></a>
+                            <span class="home_location" ng-click="showLocation()">
+                                 <i class="ion-ios-clock-outline"></i>&nbsp;22小时
+                            </span>
                             </div>
                         </div>
                     </div>
@@ -32,123 +30,117 @@
                     <div class="item item-body">
                         <img class="full-image" src="posts/pics/1.jpeg">
 
-                        <p ng-click="showLocation()">
-                            <i class="ion-location"></i>
-                            四川，成都
-                        </p>
-
                         <p>
                             This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
                             the content is from a card-body consisting of an image and paragraph text. The footer
                             consists of tabs, icons aligned left, within the card-footer.
                         </p>
 
+                    </div>
+
+                    <div class="item tabs tabs-secondary tabs-icon-left">
+                        <a class="tab-item" href="#">
+                            <i class="icon ion-ios-heart-outline"></i>
+                            <span class="subdued">10</span>
+                        </a>
+                        <a class="tab-item" href="#">
+                            <i class="icon ion-ios-chatbubble-outline"></i>
+                            <span class="subdued">20</span>
+                        </a>
+                        <a class="tab-item" href="#" ng-click="showActionSheet(1)">
+                            <i class="icon ion-ios-more-outline"></i>
+                        </a>
+                    </div>
+                </div>
+            </ion-item>
+            <ion-item class="item">
+                <div class="list">
+                    <div class="item item-avatar">
+                        <img src="posts/avatars/avatar1.jpg">
+
+                        <div class="row">
+                            <div class="col-90">
+                                <h2>Marty McFly</h2>
+
+                                <p>November 05, 1955</p>
+                            </div>
+                            <div class="col">
+                            <span class="home_location" ng-click="showLocation()">
+                                 <i class="ion-ios-clock-outline"></i>&nbsp;22小时
+                            </span>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item item-body">
+                        <img class="full-image" src="posts/pics/1.jpeg">
+
                         <p>
-                            <button class="button button-small button-stable">美食</button>
-                        </p>
-                        <p>
-                            <a href="#" class="subdued">1 Like</a>
-                            <a href="#" class="subdued">5 Comments</a>
+                            This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
+                            the content is from a card-body consisting of an image and paragraph text. The footer
+                            consists of tabs, icons aligned left, within the card-footer.
                         </p>
                     </div>
 
                     <div class="item tabs tabs-secondary tabs-icon-left">
                         <a class="tab-item" href="#">
-                            <i class="icon ion-thumbsup"></i>
-
+                            <i class="icon ion-ios-heart-outline"></i>
+                            <span class="subdued">10</span>
                         </a>
                         <a class="tab-item" href="#">
-                            <i class="icon ion-chatbox"></i>
+                            <i class="icon ion-ios-chatbubble-outline"></i>
+                            <span class="subdued">20</span>
                         </a>
-                        <a class="tab-item" href="#">
-                            <i class="icon ion-plus-round"></i>
-
+                        <a class="tab-item" href="#" ng-click="showActionSheet(1)">
+                            <i class="icon ion-ios-more-outline"></i>
                         </a>
                     </div>
 
                 </div>
             </ion-item>
             <ion-item class="item">
-                <div class="list card">
+                <div class="list">
 
                     <div class="item item-avatar">
-                        <img src="mcfly.jpg">
+                        <img src="posts/avatars/avatar1.jpg">
 
-                        <h2>Marty McFly</h2>
+                        <div class="row">
+                            <div class="col-90">
+                                <h2>Marty McFly</h2>
 
-                        <p>November 05, 1955</p>
+                                <p>November 05, 1955</p>
+                            </div>
+                            <div class="col">
+                            <span class="home_location" ng-click="showLocation()">
+                                 <i class="ion-ios-clock-outline"></i>&nbsp;22小时
+                            </span>
+
+                            </div>
+                        </div>
                     </div>
 
                     <div class="item item-body">
-                        <img class="full-image" src="delorean.jpg">
+                        <img class="full-image" src="posts/pics/1.jpeg">
 
                         <p>
                             This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
                             the content is from a card-body consisting of an image and paragraph text. The footer
                             consists of tabs, icons aligned left, within the card-footer.
                         </p>
-
-                        <p>
-                            <a href="#" class="subdued">1 Like</a>
-                            <a href="#" class="subdued">5 Comments</a>
-                        </p>
                     </div>
 
                     <div class="item tabs tabs-secondary tabs-icon-left">
                         <a class="tab-item" href="#">
-                            <i class="icon ion-thumbsup"></i>
-                            Like
+                            <i class="icon ion-ios-heart-outline"></i>
+                            <span class="subdued">10</span>
                         </a>
                         <a class="tab-item" href="#">
-                            <i class="icon ion-chatbox"></i>
-                            Comment
+                            <i class="icon ion-ios-chatbubble-outline"></i>
+                            <span class="subdued">20</span>
                         </a>
-                        <a class="tab-item" href="#">
-                            <i class="icon ion-share"></i>
-                            Share
-                        </a>
-                    </div>
-
-                </div>
-            </ion-item>
-            <ion-item class="item">
-                <div class="list card">
-
-                    <div class="item item-avatar">
-                        <img src="mcfly.jpg">
-
-                        <h2>Marty McFly</h2>
-
-                        <p>November 05, 1955</p>
-                    </div>
-
-                    <div class="item item-body">
-                        <img class="full-image" src="delorean.jpg">
-
-                        <p>
-                            This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
-                            the content is from a card-body consisting of an image and paragraph text. The footer
-                            consists of tabs, icons aligned left, within the card-footer.
-                        </p>
-
-                        <p>
-                            <a href="#" class="subdued">1 Like</a>
-                            <a href="#" class="subdued">5 Comments</a>
-                        </p>
-                    </div>
-
-                    <div class="item tabs tabs-secondary tabs-icon-left">
-                        <a class="tab-item" href="#">
-                            <i class="icon ion-thumbsup"></i>
-                            Like
-                        </a>
-                        <a class="tab-item" href="#">
-                            <i class="icon ion-chatbox"></i>
-                            Comment
-                        </a>
-                        <a class="tab-item" href="#">
-                            <i class="icon ion-share"></i>
-                            Share
+                        <a class="tab-item" href="#" ng-click="showActionSheet(1)">
+                            <i class="icon ion-ios-more-outline"></i>
                         </a>
                     </div>
 

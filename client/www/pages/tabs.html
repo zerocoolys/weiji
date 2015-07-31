@@ -1,24 +1,24 @@
 <ion-tabs class="tabs-icon-only tabs-calm">
 
-    <ion-tab icon="ion-home" ng-dblclick="refresh()" href="#/index/home">
+    <ion-tab icon="ion-home" ng-dblclick="refresh()" ui-sref="index.home">
         <ion-nav-view name="home-tab"></ion-nav-view>
     </ion-tab>
 
-    <ion-tab icon="ion-heart" href="#/index/interesting">
+    <ion-tab icon="ion-heart" ui-sref="index.interesting">
         <ion-nav-view name="int-tab"></ion-nav-view>
     </ion-tab>
 
 
-    <ion-tab icon="ion-plus" href="#/index/newpost">
-        <ion-nav-view name="newpost-tab"></ion-nav-view>
+    <ion-tab icon="ion-plus" ui-sref="index.camera" >
+        <ion-nav-view name="camera-tab"></ion-nav-view>
     </ion-tab>
 
-    <ion-tab icon="ion-search" ui-sref="#/index/search">
+    <ion-tab icon="ion-search" ui-sref="index.search">
         <ion-nav-view name="search-tab"></ion-nav-view>
     </ion-tab>
 
 
-    <ion-tab icon="ion-person" ui-sref="#/index/account">
+    <ion-tab icon="ion-person" ui-sref="index.person">
         <ion-nav-view name="account-tab"></ion-nav-view>
     </ion-tab>
 </ion-tabs>
