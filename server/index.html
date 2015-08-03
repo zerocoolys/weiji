@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+    <script src="https://cdn.socket.io/socket.io-1.3.6.js"></script>
+</head>
+<body>
+<div id="loginbox">
+    <div style="width:260px;margin:200px auto;">
+        请输入要发送的消息
+        <br/>
+        <br/>
+        <input type="text" style="width:180px;" placeholder="请输入消息" id="message" name="message"/>
+        <input type="button" style="width:50px;" value="发送" onclick="PUBLISH.pushMessage();"/>
+    </div>
+</div>
+<script type="text/javascript">
+    (function () {
+        var d = document,
+                w = window,
+                p = parseInt,
+                dd = d.documentElement,
+                db = d.body,
+                dc = d.compatMode == 'CSS1Compat',
+                dx = dc ? dd : db,
+                ec = encodeURIComponent;
+
+
+        w.PUBLISH = {
+            msgObj: d.getElementById("message"),
+            username: null,
+            token: null,
+            socket: io.connect('http://127.0.0.1:9804/news'),
+            logout: function () {
+                this.socket.disconnect();
+            },
+            // 推送消息
+            pushMessage: function () {
+                var content = d.getElementById("message").value;
+                if (content != null && content != '' && content.trim().length > 0) {
+                    var obj = {
+                        content: content
+                    };
+                    this.socket.emit('server_message', obj);
+                    d.getElementById("message").value = '';
+                }
+                return false;
+            }
+        };
+
+        //通过"回车"推送信息
+        d.getElementById("message").onkeydown = function (e) {
+            e = e || event;
+            if (e.keyCode === 13) {
+                PUBLISH.pushMessage();
+            }
+        };
+    })();
+</script>
+</body>
+</html>

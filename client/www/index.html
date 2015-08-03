@@ -16,7 +16,7 @@
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
-    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
@@ -31,6 +31,7 @@
 
 
     <script src="js/controllers/ControllersModule.js"></script>
+    <script src="js/controllers/LocalNotificationCtrl.js"></script>
     <script src="js/controllers/HomeCtrl.js"></script>
     <script src="js/controllers/UserCtrl.js"></script>
     <script src="js/controllers/InterestCtrl.js"></script>
@@ -68,6 +69,9 @@
 
 </ion-nav-view>
 
+<ion-content ng-controller="LocalNotificationCtrl" style="display: none">
+</ion-content>
+
 <!--<ion-footer-bar align-title="left" class="bar-assertive">-->
 <!--<div class="tabs tabs-icon-only">-->
 <!--<a class="tab-item" href="#/home">-->
@@ -87,11 +91,36 @@
 <!--</ion-footer-bar>-->
 
 <script>
-    var socket = io('http://192.168.1.180:9804');
-    socket.on('news', function (data) {
-        console.log("Socket Client Received Message: " + JSON.stringify(data));
-        socket.emit('my other event', {my: 'data'});
-    });
+//    var socket = io('http://127.0.0.1:9804/news');
+//    socket.on('message', function (data) {
+//
+//        alert(JSON.stringify(data));
+//        console.log("Socket Client Received Message: " + JSON.stringify(data));
+//        socket.emit('my other event', {my: 'data'});
+//    });
+//    (function (global) {
+//        var app = global.app = global.app || {};
+//
+//        document.addEventListener('deviceready', function () {
+//            navigator.splashscreen.hide();
+//
+//            app.changeSkin = function (e) {
+//                var mobileSkin = "";
+//
+//                if (e.sender.element.text() === "Flat") {
+//                    e.sender.element.text("Native");
+//                    mobileSkin = "flat";
+//                } else {
+//                    e.sender.element.text("Flat");
+//                    mobileSkin = "";
+//                }
+//
+//                app.application.skin(mobileSkin);
+//            };
+//
+//            app.application = new kendo.mobile.Application(document.body, {layout: "tabstrip-layout"});
+//        }, false);
+//    })(window);
 </script>
 </body>
 </html>

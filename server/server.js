@@ -3,6 +3,7 @@ var socketIo = require('socket.io');
 var morgan = require('morgan');
 var server = restify.createServer();
 var io = socketIo.listen(server.server);
+var fs = require('fs');
 var db = require('mongojs')('weijiapp', ['Users', 'Posts', 'Locations']);
 
 server.use(restify.acceptParser(server.acceptable));
@@ -18,17 +19,43 @@ server.use(function (req, res, next) {
 });
 
 //================ Socket.io ================
-server.get('/', function indexHTML(req, res, next) {
-    next();
-});
+server.get('/pushMsg', function indexHTML(req, res, next) {
+    fs.readFile(__dirname + '/index.html', function (err, data) {
+        if (err) {
+            next(err);
+            return;
+        }
 
-io.sockets.on('connection', function (socket) {
-    socket.emit('news', {hello: 'world'});
-    socket.on('my other event', function (data) {
-        console.log(data);
+        res.setHeader('Content-Type', 'text/html');
+        res.writeHead(200);
+        res.end(data);
+        next();
     });
 });
-//===========================================
+
+/**
+ * 用户订阅属性
+ * username
+ * type: 'android' / 'ios'
+ * token
+ */
+io.of('/news').on('connection', function (socket) {
+
+    // 监听用户订阅推送
+    socket.on('registration', function (obj) {
+        //
+    });
+
+    // push message to clients under a given scope identified by a pathname (eg: /news)
+    socket.on('server_message', function (obj) {
+        io.of('/news').emit('message', obj);
+    });
+
+    // 监听用户取消订阅
+    socket.on('unregistration', function () {
+        //
+    });
+});
 
 server.listen(process.env.PORT || 9804, function () {
 
