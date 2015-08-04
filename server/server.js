@@ -49,6 +49,7 @@ io.of('/news').on('connection', function (socket) {
     // push message to clients under a given scope identified by a pathname (eg: /news)
     socket.on('server_message', function (obj) {
         io.of('/news').emit('message', obj);
+        console.log(JSON.stringify(obj));
     });
 
     // 监听用户取消订阅

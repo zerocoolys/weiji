@@ -1,35 +1,39 @@
 /**
  * Created by dolphineor on 2015-8-3.
  */
-ControllersModule.controller('LocalNotificationCtrl', function ($rootScope, $scope, $cordovaLocalNotification, SERVER_URL) {
-    $scope.add = function (message) {
-        var alarmTime = new Date();
-        alarmTime.setMinutes(alarmTime.getMinutes() + 1);
-        $cordovaLocalNotification.add({
-            id: "1234",
-            date: alarmTime,
-            message: message,
-            title: "This is a title",
-            autoCancel: true,
-            sound: null
-        }).then(function () {
-            console.log("The notification has been set");
-        });
-    };
-
-    $scope.isScheduled = function () {
-        $cordovaLocalNotification.isScheduled("1234").then(function (isScheduled) {
-            alert("Notification 1234 Scheduled: " + isScheduled);
-        });
-    };
-
-    $scope.initSocket = function () {
-        var socket = io(SERVER_URL + '/news');
-        socket.on('message', function (data) {
-            console.log("Socket Client Received Message: " + JSON.stringify(data));
-            $scope.add(data);
-        });
-    };
-
-    $scope.initSocket();
+ControllersModule.controller('LocalNotificationCtrl', function ($rootScope, $cordovaLocalNotification, SERVER_URL) {
+    //$rootScope.add = function (message) {
+    //    $cordovaLocalNotification.add({
+    //        id: "1234",
+    //        message: message,
+    //        title: "This is a title",
+    //        autoCancel: true,
+    //        icon: 'http://sciactive.com/pnotify/includes/github-icon.png'
+    //    }).then(function () {
+    //        alert("The notification has been set");
+    //        console.log("The notification has been set");
+    //    });
+    //};
+    //
+    //$rootScope.socket = io(SERVER_URL + '/news');
+    //
+    //$rootScope.isScheduled = function () {
+    //    $cordovaLocalNotification.isScheduled("1234").then(function (isScheduled) {
+    //        alert("Notification 1234 Scheduled: " + isScheduled);
+    //    });
+    //};
+    //
+    //$rootScope.initSocket = function () {
+    //    $rootScope.logtest = "======";
+    //
+    //    //var socket = io(SERVER_URL + '/news');
+    //    $rootScope.socket.on('message', function (data) {
+    //        $rootScope.logtest = JSON.stringify(data);
+    //        console.log("Socket Client Received Message: " + JSON.stringify(data));
+    //        alert("Receive Message" + data);
+    //        $rootScope.add(data);
+    //    });
+    //};
+    //
+    //$rootScope.initSocket();
 });
