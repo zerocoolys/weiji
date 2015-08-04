@@ -24,7 +24,6 @@ ControllersModule.controller('LocalNotificationCtrl', function ($rootScope, $sco
     };
 
     $scope.initSocket = function () {
-        alert("=======" + SERVER_URL);
         var socket = io(SERVER_URL + '/news');
         socket.on('message', function (data) {
             console.log("Socket Client Received Message: " + JSON.stringify(data));
