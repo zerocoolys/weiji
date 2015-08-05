@@ -7,10 +7,9 @@
 // 'starter.controllers' is found in controllers.js
 var app = angular.module('weiji', ['ionic', 'ControllersModule', 'ServicesModule', 'ConfigModule', 'ngCordova'])
 
-    .run(function ($ionicPlatform, $cordovaLocalNotification) {
+    .run(function ($ionicPlatform, NotificationServices) {
+
         $ionicPlatform.ready(function () {
-
-
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
             // for form inputs)
             if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
@@ -23,38 +22,10 @@ var app = angular.module('weiji', ['ionic', 'ControllersModule', 'ServicesModule
                 StatusBar.styleLightContent();
             }
 
-            // Push notification
-            var pushMsg = function (message) {
-                $cordovaLocalNotification.add({
-                    id: "1234",
-                    message: message,
-                    title: "This is a title",
-                    autoCancel: true,
-                    icon: 'http://sciactive.com/pnotify/includes/github-icon.png'
-                }).then(function () {
-                    alert("The notification has been set");
-                    console.log("The notification has been set");
-                });
-            };
+        });
 
-            //var socket = io('http://192.168.1.180:9804/news');
-            //socket.emit('server_message', '1234567890');
-            //
-            //socket.on('message', function (data) {
-            //    alert("Received Message by server pushed: " + JSON.stringify(data));
-            //    pushMsg(data);
-            //});
-            //
-            //pushMsg("Hello World");
-            //
-            document.addEventListener('deviceready', function () {
-                var socket = io.connect('http://192.168.1.180:9804/news');
-                socket.on('message', function (data) {
-                    alert("Received Message by server pushed: " + JSON.stringify(data));
-                });
-            });
-            //
-
+        NotificationServices.ready.then(function (device) {
+            console.log(device)
         });
     })
 
