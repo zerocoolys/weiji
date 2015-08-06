@@ -121,9 +121,7 @@ ServicesModule.factory('CameraService', function ($ionicActionSheet, $ionicLoadi
                     $ionicLoading.show({
                         template: '上传中...'
                     });
-
                     var ft = new FileTransfer();
-                    alert(JSON.stringify(ft));
                     ft.upload(fileURL, "http://v0.api.upyun.com/weiji", function (data) {
                         alert(JSON.stringify(data));
                         $ionicLoading.hide();

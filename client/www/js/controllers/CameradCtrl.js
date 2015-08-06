@@ -8,9 +8,4 @@ ControllersModule.controller('CameradCtrl', function ($scope, $rootScope,CameraS
         upload:'上传'
     }
     CameraService.create($scope,$cordovaCamera,$cordovaImagePicker);
-    //$scope.urlForImage = function(imageName) {
-    //    var name = imageName.substr(imageName.lastIndexOf('/') + 1);
-    //    var trueOrigin = cordova.file.dataDirectory + name;
-    //    return trueOrigin;
-    //}
 })
