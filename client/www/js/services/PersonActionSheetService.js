@@ -8,7 +8,7 @@ ServicesModule.factory('AvatarDropdownService', function ($ionicActionSheet) {
                         {
                             text: '关注',
                             onclick: function () {
-                                console.log('关注' + id);
+                                console.log('关注阿斯顿飞' + id);
                             }
                         },
                         {

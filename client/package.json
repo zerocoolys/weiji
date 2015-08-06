@@ -17,7 +17,12 @@
   "cordovaPlugins": [
     "org.apache.cordova.device",
     "org.apache.cordova.console",
-    "com.ionic.keyboard"
+    "org.apache.cordova.file-transfer",
+    "com.ionic.keyboard",
+    {
+      "locator": "https://github.com/wymsee/cordova-imagePicker.git",
+      "id": "com.synconset.imagepicker"
+    }
   ],
   "cordovaPlatforms": [
     "ios",

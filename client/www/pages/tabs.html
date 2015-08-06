@@ -1,4 +1,4 @@
-<ion-tabs class="tabs-icon-only tabs-calm">
+<ion-tabs class="tabs-icon-only tabs-calm" ng-controller="CameradCtrl">
 
     <ion-tab icon="ion-home" ng-dblclick="refresh()" ui-sref="index.home">
         <ion-nav-view name="home-tab"></ion-nav-view>
@@ -9,8 +9,8 @@
     </ion-tab>
 
 
-    <ion-tab icon="ion-plus" ui-sref="index.camera" >
-        <ion-nav-view name="camera-tab"></ion-nav-view>
+    <ion-tab icon="ion-plus" ui-sref="index.newpost">
+        <ion-nav-view name="newpost-tab" ></ion-nav-view>
     </ion-tab>
 
     <ion-tab icon="ion-search" ui-sref="index.search">

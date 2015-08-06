@@ -79,6 +79,16 @@ var app = angular.module('weiji', ['ionic', 'ControllersModule', 'ServicesModule
                     }
                 }
             })
+            //添加
+            .state('index.newpost', {
+                url: '/newpost',
+                views: {
+                    'newpost-tab': {
+                        templateUrl: 'pages/camera.html',
+                        controller: 'CameradCtrl'
+                    }
+                }
+            })
             //关注页
             .state('index.interesting', {
                 url: '/interesting',

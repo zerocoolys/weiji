@@ -1,9 +1,10 @@
 //angular.module('weiji.controllers', []).controller('HomeCtrl', ['LoginModal', function ($scope, $rootScope, $ionicModal, $ionicActionSheet, LoginModal) {
-ControllersModule.controller('HomeCtrl', function ($scope, $rootScope, $location, $stateParams, $ionicModal, RegisterModalService, LoginModalService, AvatarDropdownService, QRCodeScannerService) {
+ControllersModule.controller('HomeCtrl', function ($scope, $rootScope, $location, $stateParams, $ionicModal, RegisterModalService, LoginModalService, AvatarDropdownService, QRCodeScannerService, CameraService) {
 
     LoginModalService.create($scope);
     RegisterModalService.create($scope);
     AvatarDropdownService.create($scope);
+    CameraService.create($scope);
 
 
     $scope.showLogin = function () {
@@ -42,9 +43,6 @@ ControllersModule.controller('HomeCtrl', function ($scope, $rootScope, $location
 
         $scope.data = {};
 
-        $scope.login = function () {
-            console.log('LOGIN user:' + $scope.data.username + ' - PW: ' + $scope.data.password);
-        }
     })
 
     .controller('AboutCtrl', function ($scope) {

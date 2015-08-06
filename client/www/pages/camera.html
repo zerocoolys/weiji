@@ -1,0 +1,19 @@
+<ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+</ion-nav-buttons>
+
+
+<ion-content class="has-header contentPadding" ng-controller="CameradCtrl">
+
+    <div class="form-group padding-top">
+        <button class='button button-positive' data-ng-click="showCameraModal()">
+            {{text.addImage}}
+        </button>
+    </div>
+    <div class="item item-body">
+        <img ng-src="{{imageUrl}}" id="myImg"/>
+    </div>
+    <button class='button button-positive' data-ng-click="uploadImg()" ng-class="{'disabled':allowUpload}">
+        {{text.upload}}
+    </button>
+</ion-content>
