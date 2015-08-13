@@ -1,4 +1,40 @@
-<ion-view title="搜索">
-    <ion-content>
+<ion-view title="搜索"  hide-nav-bar="true">
+    <div class="bar bar-header bar-calm item-input-inset search_top">
+                <label class="item-input-wrapper">
+                    <i class="icon ion-ios-search placeholder-icon"></i>
+                    <input type="search" class="search_input" placeholder="搜索">
+                </label>
+     </div>
+    <ion-content class="search_slide">
+        <ion-slide-box auto-play="3000" does-continue="true" delegate-handle="slide1"
+                       show-pager="false" on-slide-changed="slide_change($index)">
+            <ion-slide ng-repeat="img in item">
+                <img ng-src="{{img.itm}}"  ng-click="open_big_img()">
+            </ion-slide>
+        </ion-slide-box>
+        <div  ng-controller="searchBanner">
+            <div class="search_title" >
+                <span class="fl">热门话题标签</span>
+                <a class="fr" href="#">显示全部></a>
+            </div>
+            <div class="search_scroll">
+                <div ng-repeat="group in data.grouplist">
+                    <ion-scroll direction="x" class="available-scroller">
+                        <div class="photo" collection-repeat="news in group.newslist" item-height="150" item-width="150">
+                            <a href="#/newsdetails/{{news.ID}}" class="subdued">
+                                <div class="list card">
+                                    <div class="item item-body">
+                                        <img class="full-image" src="{{news.avatharURL}}">
+                                    </div>
+                                </div>
+                                </a>
+                        </div>
+                    </ion-scroll>
+                </div>
+            </div>
+        </div>
+        <img collection-repeat="photo in main.photos"
+             item-height="33%" item-width="33%"
+             ng-src="{{photo}}">
     </ion-content>
 </ion-view>

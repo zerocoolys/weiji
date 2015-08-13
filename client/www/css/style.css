@@ -1,3 +1,9 @@
+.fl{
+    float:left;
+}
+.fr{
+    float:right;
+}
 /*边距调整*/
 .home_item .item {
     padding: 0px;
@@ -171,7 +177,7 @@
 
 .care_button {
     position: absolute;
-    right: 10px;
+    right: 18px;
     height: 24px;
     min-height: 24px;
     min-width: 30px;
@@ -182,6 +188,7 @@
     white-space: nowrap;
 
 }
+
 /* Empty. Add your own CSS if you like */
 /* 覆盖action-sheet*/
 
@@ -241,3 +248,127 @@
     display: block;
 }
 .platform-android .action-sheet-has-icons .button {}
+/*solid*/
+.search_slide .slider {
+   height: 200px;
+}
+.search_slide .slider-slide {
+    color: #000;
+    background-color: #fff;
+    text-align: center;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+}
+.slider-slide img{
+   width:100%;
+}
+
+.slider-pager-page i{
+    display:none;
+}
+
+ion-item.ng-leave {
+    opacity: 1;
+    transition: .1s all ease-in;
+}
+ion-item.ng-leave.ng-leave-active {
+    opacity: 0;
+}
+ion-item.ng-leave-active ~ ion-item:not(.ng-leave),
+ion-item.ng-leave-active:last-of-type {
+    /* get rid of tiny jump due to borders with the 1px calc */
+    transform: translate3d(0, calc(-100% + 1px), 0);
+    transition: .1s all ease-in;
+}
+
+ion-item.ng-leave-active:last-of-type {
+    z-index: -1;
+}
+/*search*/
+.search_top.item-input-inset .item-input-wrapper{
+    background:#0a9ec7;
+
+}
+
+/*.search_top .placeholder-icon{
+    color:#fff;
+}
+.search_input{
+    color:#fff;
+}*/
+.search_title{
+    width:100%;
+    padding:0 10px;
+    margin-top:10px;
+    color:#7c7c7c;
+    overflow:hidden;
+
+}
+.search_title a{
+    color:#11c1f3;
+    text-decoration: none;
+}
+.photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.available-scroller {
+    height: 120px;
+}
+.slider {
+    height: 100%;
+}
+
+.slider-slide {
+    padding-top: 0px;
+}
+.search_scroll .scroll-bar-h{
+    display:none;
+}
+.search_scroll .item{
+border:none;
+}
+.search_scroll .card{
+    box-shadow: none;
+}
+.search_scroll .item-body{
+    padding:0px;
+}
+/*引导页*/
+
+.make-centre{
+
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+}
+.box {
+    height: 100%;
+
+}
+.blue{
+    background-color: #444;
+}
+
+.yellow{
+    background-color: yellow;
+}
+
+.pink{
+    background-color: pink;
+}
+
+.move-box{
+@include make-centre;
+    height: 100px;
+    width: 100px;
+    border: 2px solid;
+    border-color: #444;
+    z-index: 10;
+
+    transition: -webkit-transform 1s;
+
+}
+

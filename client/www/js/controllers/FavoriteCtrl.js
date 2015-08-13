@@ -7,7 +7,7 @@ ControllersModule.controller('FavoriteCtrl',function($){
 
 
 
-    $scope.favs
+  //  $scope.favs
 
 
 })
